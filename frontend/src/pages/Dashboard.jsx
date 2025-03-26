@@ -18,7 +18,7 @@ export const Dashboard = () => {
                     alert("Unauthorized access. Please log in again.");
                     return;
                 }
-                const response=await axios.get("http://localhost:3000/api/v1/user/details",{
+                const response=await axios.get("https://paytm-backend-1ymy.onrender.com/api/v1/user/details",{
                     headers:{Authorization: `Bearer ${token}`,
                     },
                 });
