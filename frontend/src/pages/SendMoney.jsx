@@ -10,7 +10,8 @@ export const SendMoney = () => {
     const lastname=searchParams.get("lastname");
     const [amount, setAmount] = useState(0);
     const navigate = useNavigate(); 
-
+    const url="https://paytm-backend-1ymy.onrender.com";
+    
     return <div className="flex justify-center h-screen bg-gray-100">
         <div className="h-full flex flex-col justify-center">
             <div
@@ -45,7 +46,7 @@ export const SendMoney = () => {
                     />
                     </div>
                     <button onClick={() => {
-                        axios.post("https://paytm-backend-1ymy.onrender.com/api/v1/account/transfer", {
+                        axios.post(url+"/api/v1/account/transfer", {
                             to: id,
                             amount
                         }, {
