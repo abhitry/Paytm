@@ -12,6 +12,7 @@ export const Signup=()=>{
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const url="https://paytm-backend-1ymy.onrender.com";
     const navigate=useNavigate();
     
     return (<div className="bg-slate-300 h-screen flex justify-center">
@@ -34,7 +35,7 @@ export const Signup=()=>{
             <div className="pt-4">
                 <Button onClick={async ()=>{
                     try{
-                        const response=await axios.post("https://paytm-backend-1ymy.onrender.com/api/v1/user/signup",{
+                        const response=await axios.post(url+"/api/v1/user/signup",{
                         username,
                         firstName,
                         lastName,
