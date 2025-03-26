@@ -8,6 +8,7 @@ export const Dashboard = () => {
     const [balance,setBalance]=useState("Loading...");
     const [firstname, setFirstname] = useState(null);
     const [lastname, setLastname] = useState(null);
+    const url="https://paytm-backend-1ymy.onrender.com";
     useEffect(()=>{
         console.log("Dashboard Component Mounted");
   
@@ -18,7 +19,7 @@ export const Dashboard = () => {
                     alert("Unauthorized access. Please log in again.");
                     return;
                 }
-                const response=await axios.get("https://paytm-backend-1ymy.onrender.com/api/v1/user/details",{
+                const response=await axios.get(url+"/api/v1/user/details",{
                     headers:{Authorization: `Bearer ${token}`,
                     },
                 });
